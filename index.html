@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maren Leigh Gray — Author</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Source+Sans+3:wght@400;500;600&family=[...]" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.1.0/iconfont/tabler-icons.min.css">
+<style>
+  :root {
+    --paper: #FAF8F3;
+    --paper-dim: #F1EEE5;
+    --ink: #201E1A;
+    --ink-blue: #1E2530;
+    --ink-blue-deep: #161B24;
+    --clay: #A85C39;
+    --clay-deep: #864827;
+    --sage: #8A9A7E;
+    --sage-deep: #677459;
+    --pewter: #8B8680;
+    --pewter-light: #B9B4AC;
+    --rule: rgba(32, 30, 26, 0.12);
+    --rule-on-dark: rgba(250, 248, 243, 0.14);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+  .wrap-narrow { max-width: 680px; margin: 0 auto; padding: 0 28px; }
+
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--clay-deep);
+  }
+
+  /* ---------- SIGNATURE FLOURISH ---------- */
+  .flourish {
+    width: 92px;
+    height: 14px;
+    display: inline-block;
+  }
+  .flourish path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(250, 248, 243, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .nav-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-name {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    font-size: 14.5px;
+    font-weight: 500;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink);
+    opacity: 0.72;
+    transition: opacity 0.15s ease;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 88px 0 96px;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 6vw, 64px);
+    line-height: 1.04;
+    margin-bottom: 8px;
+  }
+
+  .hero-flourish {
+    color: var(--clay);
+    margin: 6px 0 22px;
+  }
+
+  .hero-tag {
+    font-size: 19px;
+    color: var(--ink);
+    opacity: 0.78;
+    max-width: 440px;
+    margin-bottom: 30px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 13px 24px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+  }
+  .btn:active { transform: scale(0.98); }
+
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--ink-blue); }
+
+  .btn-ghost { border-color: var(--rule); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--pewter); }
+
+  .hero-portrait {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--paper-dim);
+    position: relative;
+  }
+  .hero-portrait img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-portrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 0 1px var(--rule);
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section { padding: 78px 0; }
+
+  .section-head {
+    margin-bottom: 44px;
+  }
+
+  .section-head .eyebrow { margin-bottom: 10px; }
+
+  .section-head h2 {
+    font-size: 32px;
+  }
+
+  /* ---------- BOOKS ---------- */
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+
+  .book-card {
+    border: 1px solid var(--rule);
+    background: var(--paper-dim);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+  .book-card:hover { border-color: var(--pewter); }
+
+  .book-cover {
+    aspect-ratio: 2 / 3;
+    background: var(--ink-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-cover-title {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: var(--paper);
+    text-align: center;
+    padding: 20px;
+    line-height: 1.2;
+  }
+
+  .book-cover.placeholder {
+    background: var(--paper-dim);
+    border-bottom: 1px solid var(--rule);
+  }
+  .book-cover.placeholder .book-cover-title {
+    color: var(--pewter);
+    font-style: normal;
+    font-size: 15px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.04em;
+  }
+
+  .book-info {
+    padding: 24px 24px 26px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .book-status {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 10px;
+  }
+
+  .book-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .book-info p {
+    font-size: 15px;
+    color: var(--ink);
+    opacity: 0.78;
+    margin-bottom: 18px;
+    flex: 1;
+  }
+
+  .book-link {
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--clay-deep);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .book-link:hover { color: var(--clay); }
+
+  /* ---------- REVIEWS ---------- */
+  .reviews-section {
+    background: var(--ink-blue);
+    color: var(--paper);
+  }
+
+  .reviews-section .eyebrow { color: var(--sage); }
+
+  .reviews-section .section-head h2 { color: var(--paper); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule-on-dark);
+    border: 1px solid var(--rule-on-dark);
+  }
+
+  .review-card {
+    background: var(--ink-blue);
+    padding: 30px 26px;
+  }
+
+  .review-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+    color: var(--paper);
+  }
+
+  .review-source {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--pewter-light);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  .about-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--paper-dim);
+  }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .about-bio p {
+    margin-bottom: 16px;
+    font-size: 17px;
+  }
+  .about-bio p:last-child { margin-bottom: 0; }
+
+  /* ---------- CONTACT / SIGNUP ---------- */
+  .contact-section {
+    background: var(--paper-dim);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+
+  .contact-info h2 { font-size: 30px; margin-bottom: 14px; }
+  .contact-info p { opacity: 0.78; margin-bottom: 22px; }
+
+  .contact-direct {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14.5px;
+  }
+  .contact-direct a {
+    text-decoration: none;
+    color: var(--clay-deep);
+    border-bottom: 1px solid var(--rule);
+  }
+  .contact-direct a:hover { color: var(--clay); }
+
+  .signup-box h3 { font-size: 19px; margin-bottom: 8px; }
+  .signup-box p.sub { font-size: 14.5px; opacity: 0.72; margin-bottom: 20px; }
+
+  .signup-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .signup-form input[type="email"] {
+    flex: 1;
+    min-width: 180px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    padding: 13px 15px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 15px;
+    border-radius: 2px;
+  }
+  .signup-form input[type="email"]:focus { outline: none; border-color: var(--clay); }
+
+  .signup-note {
+    margin-top: 14px;
+    font-size: 12.5px;
+    color: var(--pewter);
+  }
+
+  .signup-success {
+    display: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13.5px;
+    color: var(--clay-deep);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer { padding: 40px 0; }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .footer-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    color: var(--pewter);
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    font-size: 13.5px;
+    color: var(--pewter);
+  }
+  .footer-links a { text-decoration: none; }
+  .footer-links a:hover { color: var(--ink); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 760px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-portrait { max-width: 220px; margin: 0 auto; order: -1; }
+    .books-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-photo { max-width: 160px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+    .nav-links { display: none; }
+    section { padding: 56px 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Maren Leigh Gray</a>
+    <ul class="nav-links">
+      <li><a href="#books">Books</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow hero-eyebrow">Author of slow-burn literary romance</div>
+        <h1>Maren Leigh<br>Gray</h1>
+        <svg class="flourish hero-flourish" viewBox="0 0 92 14"><path d="M2 9C14 2 20 2 26 7C32 12 40 12 46 6C52 0 60 0 66 6C72 12 80 12 90 4"/></svg>
+        <p class="hero-tag">Novels about the people who learn to stay after they've spent years learning how to leave.</p>
+        <div class="hero-actions">
+          <a href="#books" class="btn btn-primary">Read the books <i class="ti ti-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-ghost">Join the list</a>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <img src="author-photo.jpg" alt="Maren Leigh Gray">
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="books">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The books</div>
+      <h2>Novels</h2>
+    </div>
+    <div class="books-grid">
+
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-title">Opera<br>Alley</div>
+        </div>
+        <div class="book-info">
+          <div class="book-status">Available now</div>
+          <h3>Opera Alley</h3>
+          <p>Evie Nash has spent fourteen months becoming someone else. Then a letter arrives, and a quiet, watchful man moves into the apartment below hers. A novel about the difference between hidin[...]
+          <a href="#contact" class="book-link">Read more &amp; get chapter one <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover placeholder">
+          <div class="book-cover-title">COVER<br>IN PROGRESS</div>
+        </div>
+        <div class="book-info">
+          <div class="book-status">Next book — in progress</div>
+          <h3>Untitled</h3>
+          <p>Something new is taking shape. Join the list below to be the first to hear the title, the cover, and the date.</p>
+          <a href="#contact" class="book-link">Get the first word <i class="ti ti-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="reviews-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Early praise</div>
+      <h2>Reviews</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <p class="review-quote">"A slow-burn that earns every inch of its ending."</p>
+        <div class="review-source">Early reader</div>
+      </div>
+      <div class="review-card">
+        <p class="review-quote">"I felt every locked door in my own chest."</p>
+        <div class="review-source">Early reader</div>
+      </div>
+      <div class="review-card">
+        <p class="review-quote">"Quiet, devastating, and so worth the patience."</p>
+        <div class="review-source">Early reader</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">About</div>
+      <h2>Maren</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="author-photo.jpg" alt="Maren Leigh Gray">
+      </div>
+      <div class="about-bio">
+        <p>Maren Leigh Gray writes about the people who learn to stay after they've spent years learning how to leave. <em>Opera Alley</em>, her debut novel, is set in Tacoma's Theatre District, where[...]
+        <p>She lives in Tacoma with her husband and their dog, Penny Lane, and is currently at work on her next novel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow">Get in touch</div>
+        <h2>Contact</h2>
+        <p>For events, interviews, or just to say hello.</p>
+        <div class="contact-direct">
+          <a href="mailto:marenleighgray@gmail.com">marenleighgray@gmail.com</a>
+        </div>
+      </div>
+      <div class="signup-box">
+        <h3>Join the list</h3>
+        <p class="sub">Sign up below and chapter one of Opera Alley will unlock right here on this page, no waiting on an email. You'll also be the first to hear about new releases.</p>
+        <form class="signup-form embeddable-buttondown-form" id="signupForm" action="https://buttondown.com/api/emails/embed-subscribe/marenleighgray" method="post">
+          <input type="email" id="emailInput" name="email" placeholder="your@email.com" required>
+          <input type="hidden" value="1" name="embed">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="signup-success" id="signupSuccess">You're on the list. Your chapter is ready below. <a href="#full-chapter" style="color: var(--clay-deep); text-decoration: underline;">Read it now <[...]
+        <p class="signup-note">Unsubscribe any time. Powered by Buttondown.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="full-chapter" class="wrap" style="display: none; padding: 70px 0;">
+  <div class="eyebrow" style="margin-bottom: 14px;">Your free chapter</div>
+  <div style="background: var(--ink-blue); color: var(--paper); padding: 46px 44px; border-radius: 3px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pewter-light); margin-bottom: 24px; padding-bottom: 16px; borde[...]
+      <span>Opera Alley — Chapter One</span>
+      <span>The letter / the man downstairs</span>
+    </div>
+    <div style="font-family: 'Fraunces', serif; font-weight: 400; font-size: 18px; line-height: 1.75;">
+      <p style="margin-bottom: 18px;">The mail slot flicked open at the foot of the stairs, the dull click of metal, the faint friction of envelope against wood as it landed. Evie heard it the way she[...]
+      <p style="margin-bottom: 18px;">Mondays the Lyric Theatre was dark, the whole building closed up and quiet, no shows and no rehearsal and no reason for anyone to be backstage. She had the day to[...]
+      <p style="margin-bottom: 18px;">The staircase yawned empty below; the air had the charged quiet of a building holding its breath. She crossed to her door, opened it, paused and listened again, a[...]
+      <p style="margin-bottom: 18px;">She went down the stairs barefoot, one hand trailing the rail.</p>
+      <p style="margin-bottom: 18px;">The envelope sat on the entryway floor. Standard issue, white, cheap, a little battered at the corner. The kind you bought in a pack of fifty, not the kind you us[...]
+      <p style="margin-bottom: 18px; font-style: italic; color: var(--clay);">EMILY NASH.</p>
+      <p style="margin-bottom: 18px;">Her breath stuttered. She had not been Emily Nash in fourteen months.</p>
+      <p style="margin-bottom: 18px;">The fear bypassed her mind and took her body hostage: her chest cinched tight, her diaphragm locked, a pulse of cold so sudden it made her shiver. She recognized [...]
+      <p style="margin-bottom: 18px;">It took longer than she wanted.</p>
+      <p style="margin-bottom: 18px;">She held the envelope at her side and went back up the stairs, not letting go of the rail until she was back inside with the deadbolt thrown.</p>
+      <p style="margin-bottom: 18px;">She waited for the shaking to stop before she opened it.</p>
+      <p style="text-align:center; color: var(--pewter-light); letter-spacing: 0.2em; margin: 28px 0;">. . .</p>
+      <p style="margin-bottom: 18px;">She opened the envelope with the care of someone handling a wasp caught in a glass, cautious, steady, but unable to resist the compulsion to look. There was a sin[...]
+      <p style="margin-bottom: 18px; font-style: italic; color: var(--clay);">I KNOW WHERE YOU ARE NOW, LITTLE MOUSE.</p>
+      <p style="margin-bottom: 18px;">She read it three times, as if repetition could transform it into something less precise. Little mouse. He had called her that from the beginning, back when she l[...]
+      <p style="margin-bottom: 18px;">Later, she understood. It wasn't intimacy, but classification. Something to be tracked. Something that could be startled, then cornered. She had left those words [...]
+      <p style="margin-bottom: 18px;">She hadn't expected it to follow her to the third floor of an apartment building in Tacoma.</p>
+      <p style="margin-bottom: 18px;">She placed the letter on her desk, right on top of the open art journal she'd been working in the night before. Pencil sketches sprawled across the pages, scenery[...]
+      <p style="margin-bottom: 18px;">The jade plant on the kitchen sill, bought the first week to keep the place from feeling like a box. The way the Monday light caught its leaves, making them almos[...]
+      <p style="margin-bottom: 18px;">She had not expected to love anything about Tacoma in January.</p>
+      <p style="margin-bottom: 18px;">She checked the apartment, the sequence as ingrained as muscle memory: deadbolt secure, chain latched, bedroom window locked, her fingers running the length of th[...]
+      <p style="margin-bottom: 18px; font-style: italic; color: var(--clay);">He found you.</p>
+      <p style="margin-bottom: 18px;">She gave herself thirty seconds, timed by the swing of the cat clock's tail beside the stove, to feel the whole sharpness of it. Then she put it away, filed it be[...]
+      <p style="margin-bottom: 18px;">This fear was not like ordinary fear. It was shaped to her, a custom fit, the way a key fits a lock. She'd had ordinary fear plenty of times: the kind that linger[...]
+      <p style="margin-bottom: 18px;">He wanted her to know: he had found her, and he wasn't in any particular hurry. The patience was the point. That was how he did things.</p>
+      <p style="margin-bottom: 18px;">She waited until her hands were steady. Then she set the letter aside and went back to getting ready, because she still needed coffee, and because the alternative[...]
+      <p style="text-align:center; color: var(--pewter-light); letter-spacing: 0.2em; margin: 28px 0;">. . .</p>
+      <p style="margin-bottom: 18px;">She had been on her way out when the mail came, but the leaving felt different now, and she went through the motions again from the start, more slowly this time. [...]
+      <p style="margin-bottom: 18px;">The mirror showed the usual winter version of herself. Pale, with the kind of translucence that never quite acclimated to the Pacific Northwest. Bruised shadows u[...]
+      <p style="margin-bottom: 18px;">She put the letter in the desk's deep drawer, with the other things she couldn't bring herself to throw away. She touched the closed drawer lightly, considering.<[...]
+      <p style="margin-bottom: 18px; font-style: italic; color: var(--clay);">Not in the trash. In a drawer. Evidence. You're already archiving it.</p>
+      <p style="margin-bottom: 18px;">She went to the closet and checked the bag. It had been there since New York, a soft-sided duffel, khaki green, packed with the things a person needed if they had[...]
+      <p style="margin-bottom: 18px;">She shrugged on her coat again, slung her bag over her shoulder, and started for the door a second time. The routine had done its work. She was ready, or as ready[...]
+      <p style="margin-bottom: 18px;">She was almost to the door when a sound on the street caught her attention, a scrape of rubber sole on wet pavement, the soft thump of something set down. She mov[...]
+      <p style="margin-bottom: 18px;">A man had appeared, materializing from the gray afternoon, hauling two heavy duffel bags and a cardboard box hugged close to his chest. He was tall, long-legged, [...]
+      <p style="margin-bottom: 18px;">He paused at the building's entrance, set the bags down, tried the door. It yielded, no resistance. He gathered everything again and slipped inside, not once glan[...]
+      <p style="margin-bottom: 18px;">She let her gaze linger on the spot, running the usual checklist.</p>
+      <p style="margin: 4px 0 18px; padding-left: 4px;">Male<br>Height above average<br>Strong<br>Unknown to her<br>No visible threat signals<br>No hesitation or self-consciousness</p>
+      <p style="margin-bottom: 18px;">He moved as if surveillance was a given, and he'd long ago decided it wasn't worth changing his behavior for. She cycled through the rest of her internal protocol[...]
+      <p style="margin: 4px 0 18px; padding-left: 4px;">No car visible<br>No companion<br>Bags carried without strain</p>
+      <p style="margin-bottom: 18px;">She noted the details, filed them.</p>
+      <p style="margin: 4px 0 18px; padding-left: 4px;">Unknown, but not an immediate concern<br>Worth observing</p>
+      <p style="margin-bottom: 18px;">She let the curtain fall and stood there a few seconds longer. The assessment was complete. She stayed anyway. She was aware of this and chose not to interrogate [...]
+      <p style="margin-bottom: 18px;">This afternoon, two new variables had entered her life: the letter in the drawer and the man downstairs. Two timers, both already ticking. She didn't know what wo[...]
+      <p style="margin-bottom: 18px; font-style: italic; color: var(--clay);">You can be afraid. It was a rule, not a comfort. You just can't only be afraid.</p>
+      <p style="margin-bottom: 0;">She put on her coat and left the apartment, more awake than she'd been in months, and thirsty for coffee.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-mark">Maren Leigh Gray</div>
+    <div class="footer-links">
+      <a href="#books">Books</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('signupForm');
+  const success = document.getElementById('signupSuccess');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+
+    fetch(form.action, { method: 'POST', body: formData, mode: 'no-cors' })
+      .then(function() { revealChapter(); })
+      .catch(function() { revealChapter(); });
+  });
+
+  function revealChapter() {
+    form.style.display = 'none';
+    success.style.display = 'block';
+
+    const chapterSection = document.getElementById('full-chapter');
+    chapterSection.style.display = 'block';
+
+    setTimeout(function() {
+      chapterSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 500);
+  }
+</script>
+
+</body>
+</html>
